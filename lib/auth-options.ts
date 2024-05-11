@@ -1,5 +1,5 @@
 import { AuthOptions } from "next-auth";
-import { connectToDatabase } from "./mongoose";
+import { connectToDatabase } from "./mognoose";
 import User from "@/database/user.model";
 
 import GitHubProvider from "next-auth/providers/github";
@@ -54,7 +54,6 @@ export const authOptions: AuthOptions = {
       return session;
     },
   },
-  debug: process.env.NODE_ENV === "development",
   session: { strategy: "jwt" },
   jwt: { secret: process.env.NEXTAUTH_JWT_SECRET! },
   secret: process.env.NEXTAUTH_SECRET!,
